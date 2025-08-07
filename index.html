@@ -3,40 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-  <title>Eagles</title>
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <script type="text/javascript" src="js/prefixfree.min.js"></script>
-
+  <title>Hanwha Eagles</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <style>
-    /* ✅ 전체 초기화 */
-    * {margin: 0; padding: 0; box-sizing: border-box;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body, html {
       width: 100%;
       height: 100%;
-      overflow-x: hidden;
       font-family: Arial, sans-serif;
+      overflow: hidden;
       position: relative;
-      z-index: 0;
     }
 
-    /* ✅ YouTube 영상 배경 */
+    /* ✅ YouTube 영상 전체 배경 */
     .vid {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
       z-index: -1;
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
     }
 
     .vid iframe {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 177.78vh; /* 16:9 비율 유지 */
+      width: 100vw;
       height: 100vh;
-      transform: translate(-50%, -50%);
+      border: none;
       pointer-events: none;
     }
 
@@ -49,28 +42,31 @@
     }
 
     h1 img {
-      height: 120px;
+      height: 100px;
     }
 
     /* ✅ 메뉴 */
     header {
       position: absolute;
-      top: 180px;
+      top: 150px;
       left: 30px;
       z-index: 1;
     }
 
-    #gnb > li {
+    #gnb {
       list-style: none;
+    }
+
+    #gnb > li {
       margin-bottom: 15px;
     }
 
     #gnb > li > a {
       text-decoration: none;
       color: white;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.7);
       padding: 8px 16px;
       border-radius: 5px;
       display: inline-block;
@@ -81,13 +77,13 @@
     }
 
     #gnb li ul li a {
-      font-size: 16px;
+      font-size: 15px;
       color: white;
+      margin-left: 20px;
       display: block;
-      margin-left: 15px;
     }
 
-    /* ✅ SNS */
+    /* ✅ SNS 아이콘 */
     #sns {
       position: absolute;
       top: 30px;
@@ -103,7 +99,7 @@
       font-size: 20px;
     }
 
-    /* ✅ 텍스트 */
+    /* ✅ 메인 텍스트 */
     .txtBox {
       position: absolute;
       bottom: 100px;
@@ -159,11 +155,11 @@
 </head>
 <body>
 
-  <!-- 🎥 YouTube 배경 영상 -->
+  <!-- 🎥 유튜브 영상 (음소거 X, 자동재생 O, 반복 O) -->
   <figure class="vid">
     <iframe 
-      src="https://www.youtube.com/embed/8TswlwWIV9c?autoplay=1&mute=1&loop=1&playlist=8TswlwWIV9c&controls=0&modestbranding=1&showinfo=0" 
-      frameborder="0"
+      src="https://www.youtube.com/embed/8TswlwWIV9c?autoplay=1&mute=0&loop=1&playlist=8TswlwWIV9c&controls=0&modestbranding=1&showinfo=0"
+      title="Hanwha Eagles 2025 Video"
       allow="autoplay; encrypted-media"
       allowfullscreen>
     </iframe>
@@ -214,7 +210,7 @@
     <li><a href="#"><i class="fa fa-instagram"></i></a></li>
   </ul>
 
-  <!-- 📢 텍스트 -->
+  <!-- 📢 메인 텍스트 -->
   <section class="txtBox">
     <p class="txt">Hanwha <b>Eagles</b></p>
     <p class="tit">2025 Season Launch</p>
