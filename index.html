@@ -1,14 +1,25 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
   <title>Eagles</title>
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
   <script type="text/javascript" src="js/prefixfree.min.js"></script>
 
   <style>
-    /* YouTube 영상 배경 */
+    /* ✅ 전체 초기화 */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      position: relative;
+      z-index: 0;
+    }
+
+    /* ✅ YouTube 영상 배경 */
     .vid {
       position: fixed;
       top: 0;
@@ -18,20 +29,137 @@
       z-index: -1;
       overflow: hidden;
     }
+
     .vid iframe {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 177.78vh; /* 16:9 비율 */
+      width: 177.78vh; /* 16:9 비율 유지 */
       height: 100vh;
       transform: translate(-50%, -50%);
       pointer-events: none;
+    }
+
+    /* ✅ 로고 */
+    h1 {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      z-index: 1;
+    }
+
+    h1 img {
+      height: 120px;
+    }
+
+    /* ✅ 메뉴 */
+    header {
+      position: absolute;
+      top: 180px;
+      left: 30px;
+      z-index: 1;
+    }
+
+    #gnb > li {
+      list-style: none;
+      margin-bottom: 15px;
+    }
+
+    #gnb > li > a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 8px 16px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    #gnb li ul {
+      margin-top: 5px;
+    }
+
+    #gnb li ul li a {
+      font-size: 16px;
+      color: white;
+      display: block;
+      margin-left: 15px;
+    }
+
+    /* ✅ SNS */
+    #sns {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      z-index: 1;
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    #sns li a {
+      color: white;
+      font-size: 20px;
+    }
+
+    /* ✅ 텍스트 */
+    .txtBox {
+      position: absolute;
+      bottom: 100px;
+      right: 80px;
+      z-index: 1;
+      color: white;
+      text-align: right;
+    }
+
+    .txtBox .txt {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .txtBox .txt b {
+      color: orange;
+    }
+
+    .txtBox .tit {
+      font-size: 24px;
+      margin-top: 5px;
+    }
+
+    /* ✅ 하단 콘텐츠 */
+    #side {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      z-index: 1;
+    }
+
+    #side .con p {
+      margin-bottom: 15px;
+    }
+
+    #side .con em {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    #side .con img {
+      height: 80px;
+    }
+
+    .btnContents {
+      margin-top: 10px;
+      color: white;
     }
   </style>
 </head>
 <body>
 
-  <!-- 🎥 배경 영상 -->
+  <!-- 🎥 YouTube 배경 영상 -->
   <figure class="vid">
     <iframe 
       src="https://www.youtube.com/embed/8TswlwWIV9c?autoplay=1&mute=1&loop=1&playlist=8TswlwWIV9c&controls=0&modestbranding=1&showinfo=0" 
@@ -42,13 +170,13 @@
   </figure>
 
   <!-- 🦅 로고 -->
-  <h1><img src="./img/한화 마크.png" /></h1>
+  <h1><img src="./img/한화 마크.png" alt="Eagles Logo" /></h1>
 
   <!-- 📋 메뉴 -->
   <header>
     <ul id="gnb">
       <li class="on">
-        <a href="#"><em><i class="fa fa-refresh fa-spin"></i>About Eagles</em></a>
+        <a href="#"><em><i class="fa fa-refresh fa-spin"></i> About Eagles</em></a>
         <ul>
           <li><a href="#"><em>Eagles</em></a></li>
         </ul>
@@ -89,23 +217,23 @@
   <!-- 📢 텍스트 -->
   <section class="txtBox">
     <p class="txt">Hanwha <b>Eagles</b></p>
-    <p class="tit">Hanwha <em>Hanwha Eagles</em></p>
+    <p class="tit">2025 Season Launch</p>
   </section>
 
   <!-- 📰 하단 콘텐츠 -->
   <section id="side">
     <div class="con">
       <p>
-        <em>Event & Community </em>
-        <a href="#"><img src="img/pic1.png" /> </a>
+        <em>Event & Community</em>
+        <a href="#"><img src="img/pic1.png" alt="Event" /></a>
       </p>
       <p>
         <em>Eagles History</em>
-        <a href="#"><img src="img/pic2.png" /> </a>
+        <a href="#"><img src="img/pic2.png" alt="History" /></a>
       </p>
       <p>
-        <em>Present </em>
-        <a href="#"><img src="img/pic3.png" /> </a>
+        <em>Present</em>
+        <a href="#"><img src="img/pic3.png" alt="Present" /></a>
       </p>
     </div>
     <div class="btnContents">
